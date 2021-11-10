@@ -2,25 +2,25 @@ namespace Lab2
 {
   class TicTacToeGame
   {
-    public Player CurrentPlayer { get; private set; }
+    public TicTacToePlayer CurrentPlayer { get; private set; }
 
-    private Player NW;
-    private Player NC;
-    private Player NE;
-    private Player MW;
-    private Player MC;
-    private Player ME;
-    private Player SW;
-    private Player SC;
-    private Player SE;
+    private TicTacToePlayer NW;
+    private TicTacToePlayer NC;
+    private TicTacToePlayer NE;
+    private TicTacToePlayer MW;
+    private TicTacToePlayer MC;
+    private TicTacToePlayer ME;
+    private TicTacToePlayer SW;
+    private TicTacToePlayer SC;
+    private TicTacToePlayer SE;
 
-    Player p1;
-    Player p2;
+    TicTacToePlayer p1;
+    TicTacToePlayer p2;
 
     public TicTacToeGame ()
     {
-      this.p1 = new Player('X');
-      this.p2 = new Player('O');
+      this.p1 = new TicTacToePlayer('X');
+      this.p2 = new TicTacToePlayer('O');
       CurrentPlayer = p1;
     }
 
@@ -44,15 +44,15 @@ namespace Lab2
     public virtual bool CanPlaySC () { return SC == null; }
     public virtual bool CanPlaySE () { return SE == null; }
 
-    public virtual Player PlayerAtNW () { return NW; }
-    public virtual Player PlayerAtNC () { return NC; }
-    public virtual Player PlayerAtNE () { return NE; }
-    public virtual Player PlayerAtMW () { return MW; }
-    public virtual Player PlayerAtMC () { return MC; }
-    public virtual Player PlayerAtME () { return ME; }
-    public virtual Player PlayerAtSW () { return SW; }
-    public virtual Player PlayerAtSC () { return SC; }
-    public virtual Player PlayerAtSE () { return SE; }
+    public virtual TicTacToePlayer PlayerAtNW () { return NW; }
+    public virtual TicTacToePlayer PlayerAtNC () { return NC; }
+    public virtual TicTacToePlayer PlayerAtNE () { return NE; }
+    public virtual TicTacToePlayer PlayerAtMW () { return MW; }
+    public virtual TicTacToePlayer PlayerAtMC () { return MC; }
+    public virtual TicTacToePlayer PlayerAtME () { return ME; }
+    public virtual TicTacToePlayer PlayerAtSW () { return SW; }
+    public virtual TicTacToePlayer PlayerAtSC () { return SC; }
+    public virtual TicTacToePlayer PlayerAtSE () { return SE; }
 
     public bool IsDraw ()
     {
@@ -73,7 +73,7 @@ namespace Lab2
       return GetWinner() != null;
     }
 
-    public Player GetWinner ()
+    public TicTacToePlayer GetWinner ()
     {
       // Rows
       if (NW == NC && NW == NE) return NW;

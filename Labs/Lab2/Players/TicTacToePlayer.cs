@@ -1,10 +1,10 @@
 namespace Lab2
 {
-  class Player
+  class TicTacToePlayer
   {
     public char Name { get; private set; }
 
-    public Player (char name)
+    public TicTacToePlayer (char name)
     {
       Name = name;
     }
